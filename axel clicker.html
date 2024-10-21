@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- Use this as a placeholder:
+<img src="Materials/placeholder.webp" alt="placeholder" style="height: 100%; width: 100%;">
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axel in Harlem: Clicker</title>
+    <link rel="stylesheet" href="Sources/axel.css">
+    <link rel="shortcut icon" href="Materials/icon.jpg" type="image/x-icon">
+</head>
+<body>
+    <div id="menu">
+        <img src="Materials/menu.jpg" alt="ERROR, PLEASE RELOAD THE PAGE" style="z-index: 1;">
+        <button onclick="bootGame()" style="z-index: 2;" id="playbutton"><b>PLAY</b></button>
+        <a href="https://github.com/CornSeller69/Axel-in-Harlem-Clicker" target="_blank" style="z-index: 2;" id="githubbutton"><button><b>GITHUB</b></button></a>
+        <p style="z-index: 2;" id="version">v0.5 (Alpha)</p> <!-- ZMIENIAJ WERSJĘ Z KAŻDĄ AKTUALIZACJĄ!!!!!!!!!! -->
+    </div>
+    <section id="click-area" onclick="clicking()"></section>
+    <button id="cash" disabled class="counter-n-shop">Cash: 0$</button>
+    <button class="counter-n-shop" onclick="openShop()">SHOP</button>
+    <div id="shop">
+    <button onclick="closeShop()" style="height: 30px; width: 30px; font-size: 22px; background-color: rgb(158, 147, 87);">X</button>
+    <h1 style="text-align: center; font-size: 50px;">----  shop  ----</h1>
+    </div>
+</body>
+<script src="Sources/axel.js"></script> <!-- Skrypt jest na końcu bo JS ma srakę, że niby nie wszystko się załadowywuje zanim odpala się funkcję clicking()-->
+</html>
