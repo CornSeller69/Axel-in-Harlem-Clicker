@@ -1,4 +1,7 @@
-# Axel-in-Harlem-Clicker
-Simple clicker. Your job is just to click on this quite gentle fellow with uhmm.... *abnormally sized rear*...
+# Axel in Harlem: Clicker
 
-:trollface:
+Click on a colorfully dressed fellow with *a comically oversized rear*, that's walking through Harlem!
+Earn cash from clicks which you can spend on upgrades and decorations to make Harlem more vibrant with life!
+
+
+# :trollface:
