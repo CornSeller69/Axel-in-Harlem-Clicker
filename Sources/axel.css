@@ -91,3 +91,19 @@ html {
     background-color: rgba(213,198,117,0.99999);;
     box-shadow: 10px 5px 5px rgb(158, 147, 87);
 }
+
+#piano_guy {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 30.1%;
+    width: 25%;
+}
+
+#the_concerned {
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30%;
+}

@@ -7,6 +7,18 @@ mus_store.currentTime = 0;
 let points = 0;
 let pts = document.getElementById("cash");
 let musicT = 0;
+var mus_purchase = new Audio('Materials/mus_purchase.mp3');
+function purchaseDelay() {
+    document.getElementsByClassName("purchase-buttons").disabled = true; // Pamiętaj aby przypinać odpowiednie przyciski pod klasę obok wymienioną!!
+    alert(recentlyPurchased + " has been purchased!");
+    mus_purchase.play();
+    setTimeout(function() {
+        mus_purchase.pause();
+        mus_purchase.currentTime = 0;
+        document.getElementsByClassName("purchase-buttons").disabled = false;
+      }, 4000);
+}
+let recentlyPurchased;
 
 function bootGame() {
     document.getElementById("menu").style.visibility = 'hidden';
@@ -48,3 +60,22 @@ function closeShop() {
     musicT = 0;
     document.getElementById("shop").style.visibility = 'hidden';
 }
+
+
+//  Usuń kod poniżej po wprowadzeniu właściwego sklepu  \\
+function tempAccess() {document.getElementById("temporary_div").style.visibility = 'visible';}
+function close_tempAccess() {document.getElementById("temporary_div").style.visibility = 'hidden';}
+
+function temp_getPianoGuy() {
+    recentlyPurchased = "Piano Gentleman";
+    purchaseDelay();
+    document.getElementById("piano_guy").style.visibility = 'visible';
+}
+
+function temp_getConcernedCitizens() {
+    recentlyPurchased = "Concerned Citizens";
+    purchaseDelay();
+    document.getElementById("the_concerned").style.visibility = 'visible';
+}
+
+//  Usuń kod powyżej po wprowadzeniu właściwego sklepu  \\
