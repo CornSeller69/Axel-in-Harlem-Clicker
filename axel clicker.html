@@ -15,15 +15,23 @@
         <img src="Materials/menu.jpg" alt="ERROR, PLEASE RELOAD THE PAGE" style="z-index: 1;">
         <button onclick="bootGame()" style="z-index: 2;" id="playbutton"><b>PLAY</b></button>
         <a href="https://github.com/CornSeller69/Axel-in-Harlem-Clicker" target="_blank" style="z-index: 2;" id="githubbutton"><button><b>GITHUB</b></button></a>
-        <p style="z-index: 2;" id="version">v0.5 (Alpha)</p> <!-- ZMIENIAJ WERSJĘ Z KAŻDĄ AKTUALIZACJĄ!!!!!!!!!! -->
+        <p style="z-index: 2;" id="version">v0.58 (Alpha)</p> <!-- ZMIENIAJ WERSJĘ Z KAŻDĄ AKTUALIZACJĄ!!!!!!!!!! -->
     </div>
     <section id="click-area" onclick="clicking()"></section>
     <button id="cash" disabled class="counter-n-shop">Cash: 0$</button>
     <button class="counter-n-shop" onclick="openShop()">SHOP</button>
+    <button id="temporary_button" style="position: absolute; top: 50px; left: 0; font-style: italic; background-color: rgb(158, 147, 87);" onclick="tempAccess()">PLACEHOLDER: ACCESS TO UPGRADES!!!</button>
+    <div id="temporary_div" style="visibility: hidden; height: 100%; width: 60%; position: absolute; left: 0; right: 0; top: 0; background-color: dimgray; z-index: 99;">
+        <button onclick="close_tempAccess()">zamknij</button>
+        <button id="temp_getPianoGuy" onclick="temp_getPianoGuy()" class="purchase-buttons">Get Fortepiano Guy</button>
+        <button id="temp_getConcernedCitizens" onclick="temp_getConcernedCitizens()" class="purchase-buttons" class="purchase-buttons">Get Concerned Citizens</button>
+    </div>
     <div id="shop">
-    <button onclick="closeShop()" style="height: 30px; width: 30px; font-size: 22px; background-color: rgb(158, 147, 87);">X</button>
+    <button onclick="closeShop()" style="height: 30px; width: 30px; font-size: 22px; background-color: rgb(158, 147, 87); height: 30px;">X</button>
     <h1 style="text-align: center; font-size: 50px;">----  shop  ----</h1>
     </div>
+    <img src="Materials/pianista.png" id="piano_guy">
+    <img src="Materials/concerned.png" id="the_concerned">
 </body>
-<script src="Sources/axel.js"></script> <!-- Skrypt jest na końcu bo JS ma srakę, że niby nie wszystko się załadowywuje zanim odpala się funkcję clicking()-->
+<script src="Sources/axel.js"></script> <!-- Skrypt jest na końcu bo JS ma srakę, że niby nie wszystko się załadowywuje zanim odpala się funkcję clicking() -->
 </html>
