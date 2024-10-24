@@ -9,19 +9,28 @@ let pts = document.getElementById("cash");
 let musicT = 0;
 var mus_purchase = new Audio('Materials/mus_purchase.mp3');
 function purchaseDelay() {
-    document.getElementsByClassName("purchase-buttons").disabled = true; // Pamiętaj aby przypinać odpowiednie przyciski pod klasę obok wymienioną!!
-    alert(recentlyPurchased + " has been purchased!");
+    let buttons = document.getElementsByClassName("purchase-buttons") // Pamiętaj aby przypinać odpowiednie przyciski pod klasę obok wymienioną!!
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+    }
     mus_purchase.play();
+    alert(recentlyPurchased + " has been purchased!");
     setTimeout(function() {
         mus_purchase.pause();
         mus_purchase.currentTime = 0;
-        document.getElementsByClassName("purchase-buttons").disabled = false;
-      }, 4000);
+        let buttons = document.getElementsByClassName("purchase-buttons") // Pamiętaj aby przypinać odpowiednie przyciski pod klasę obok wymienioną!!
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = false;
+        }
+      }, 2330);
 }
 let recentlyPurchased;
+// Poniżej wstawiaj sprawdzania jakie decory z aktywnymi efektami są zakupione...
+let cowboyOwned = false;
 
 function bootGame() {
     document.getElementById("menu").style.visibility = 'hidden';
+    document.getElementById("click-area").style.pointerEvents = 'auto';
     mus_01.play();
     setInterval(loopMusic, 135000);
     console.log("If you don't hear anything right now [music], that means script broke... Which is something I expected to happen lmao");
@@ -42,6 +51,9 @@ function loopMusic() {
 
 function clicking() {
     points++;
+    if (cowboyOwned) {
+        points = points + 0.1;
+    }
     pts.textContent = "Cash: " + points + "$";
 }
 
@@ -50,7 +62,12 @@ function openShop() {
     mus_store.currentTime = mus_01.currentTime;
     mus_store.play();
     musicT = 1;
-    document.getElementById("shop").style.visibility = 'visible';
+    //document.getElementById("shop").style.visibility = 'visible';
+    document.getElementById("shop").classList.add("visible");
+document.getElementById("close-shop").addEventListener("click", function() {
+  document.getElementById("shop").classList.remove("visible");
+});
+
 }
 
 function closeShop() {
@@ -58,11 +75,24 @@ function closeShop() {
     mus_01.currentTime - mus_store.currentTime;
     mus_01.play();
     musicT = 0;
-    document.getElementById("shop").style.visibility = 'hidden';
+    //document.getElementById("shop").style.visibility = 'hidden';
+    document.getElementById("shop").classList.remove("visible");
 }
 
+function getCowboy() {
+    if (!cowboyOwned) {
+        if (points >= 200) {
+            points = points - 200;
+            recentlyPurchased = "Cowboy";
+            purchaseDelay();
+            document.getElementById("cowboy").style.visibility = 'visible';
+            cowboyOwned = true;
+            document.getElementById("buyCowboy").style.backgroundColor = 'gray';
+        } else {alert("You're too poor for that, lmao.");}
+    } else {alert("You already own this!");}
+}
 
-//  Usuń kod poniżej po wprowadzeniu właściwego sklepu  \\
+//  Usuń/Zrecyklinguj kod poniżej po wprowadzeniu właściwego sklepu  \\
 function tempAccess() {document.getElementById("temporary_div").style.visibility = 'visible';}
 function close_tempAccess() {document.getElementById("temporary_div").style.visibility = 'hidden';}
 
@@ -78,4 +108,22 @@ function temp_getConcernedCitizens() {
     document.getElementById("the_concerned").style.visibility = 'visible';
 }
 
+function temp_getCowboy() {
+    recentlyPurchased = "Cowboy";
+    purchaseDelay();
+    document.getElementById("cowboy").style.visibility = 'visible';
+    cowboyOwned = true;
+}
+
+function temp_getPhoto() {
+    recentlyPurchased = "Old Photo";
+    purchaseDelay();
+    document.getElementById("old-photo").style.visibility = 'visible';
+}
+
+function temp_getMGE() {
+    recentlyPurchased = "MGE Buddy";
+    purchaseDelay();
+    document.getElementById("mge").style.visibility = 'visible';
+}
 //  Usuń kod powyżej po wprowadzeniu właściwego sklepu  \\

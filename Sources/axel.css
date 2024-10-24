@@ -52,13 +52,23 @@ html {
 #version {
     position: absolute;
     right: 10px;
-    bottom: -4px;
+    bottom: 5px;
     text-align: right;
     color: rgb(213,198,117);
     font-size: 22px;
 }
 
+#creator {
+    position: absolute;
+    right: 10px;
+    bottom: -15px;
+    text-align: right;
+    color: rgb(213,198,117);
+    font-size: 17px;
+}
+
 #click-area {
+    pointer-events: none;
     cursor: grab;
     height: 100%;
     left: 0;
@@ -71,11 +81,45 @@ html {
 .counter-n-shop {
     background-color: rgba(213,198,117,0.6);
     height: 40px;
-    width: 200px;
     font-size: 30px;
     color: black;
 }
 
+#cash {
+    width: 400px;
+    text-align: left;
+}
+
+#shop- {
+    width: 200px;
+}
+
+/*#shop {
+    visibility: hidden;
+    height: 95%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    width: 60%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin-inline: auto;
+    background-color: rgba(213,198,117,0.99999);
+    box-shadow: 10px 5px 5px rgb(158, 147, 87);
+    z-index: 10;
+}*/
+
+@keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+}
+  
 #shop {
     visibility: hidden;
     height: 95%;
@@ -88,8 +132,22 @@ html {
     top: 0;
     bottom: 0;
     margin-inline: auto;
-    background-color: rgba(213,198,117,0.99999);;
+    background-color: rgba(213,198,117,0.99999);
     box-shadow: 10px 5px 5px rgb(158, 147, 87);
+    z-index: 10;
+    transform: translateY(100%);
+    transition: visibility 0s, transform 0.5s ease-in-out;
+}
+  
+  #shop.visible {
+    visibility: visible;
+    transform: translateY(0);
+    animation: slideUp 0.5s ease-in-out forwards;
+}
+
+
+.products {
+    pointer-events: none;
 }
 
 #piano_guy {
@@ -106,4 +164,32 @@ html {
     left: 0;
     bottom: 0;
     width: 30%;
+    z-index: 1;
+}
+
+#cowboy {
+    visibility: hidden;
+    position: absolute;
+    bottom: 12%;
+    width: 22%;
+    left: 67%;
+    z-index: 0.9;
+}
+
+#old-photo {
+    visibility: hidden;
+    position: absolute;
+    bottom: 33%;
+    width: 14%;
+    left: 2%;
+    transform: rotate(-5deg);
+    z-index: 0.9;
+}
+
+#mge {
+    visibility: hidden;
+    position: absolute;
+    bottom: -3%;
+    width: 18%;
+    right: 0;
 }
