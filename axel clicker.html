@@ -12,26 +12,36 @@
 </head>
 <body>
     <div id="menu">
-        <img src="Materials/menu.jpg" alt="ERROR, PLEASE RELOAD THE PAGE" style="z-index: 1;">
-        <button onclick="bootGame()" style="z-index: 2;" id="playbutton"><b>PLAY</b></button>
-        <a href="https://github.com/CornSeller69/Axel-in-Harlem-Clicker" target="_blank" style="z-index: 2;" id="githubbutton"><button><b>GITHUB</b></button></a>
-        <p style="z-index: 2;" id="version">v0.58 (Alpha)</p> <!-- ZMIENIAJ WERSJĘ Z KAŻDĄ AKTUALIZACJĄ!!!!!!!!!! -->
+        <img src="Materials/menu.jpg" alt="ERROR, PLEASE RELOAD THE PAGE" style="z-index: 1; pointer-events: none;">
+        <button onclick="bootGame()" style="z-index: 2; cursor: pointer;" id="playbutton"><b>PLAY</b></button>
+        <a href="https://github.com/CornSeller69/Axel-in-Harlem-Clicker" target="_blank" style="z-index: 2; user-select: none;" id="githubbutton"><button style="cursor: pointer;"><b>GITHUB</b></button></a>
+        <p style="z-index: 2;" id="version">v0.7 (Alpha)</p> <!-- ZMIENIAJ WERSJĘ Z KAŻDĄ AKTUALIZACJĄ!!!!!!!!!! -->
+        <p style="z-index: 2;" id="creator">Axel in Harlem: Clicker, by CornSeller. Materials used here were made by Animan Studios.</p>
     </div>
     <section id="click-area" onclick="clicking()"></section>
     <button id="cash" disabled class="counter-n-shop">Cash: 0$</button>
-    <button class="counter-n-shop" onclick="openShop()">SHOP</button>
+    <button class="counter-n-shop" onclick="openShop()" style="cursor: pointer;" id="shop-">SHOP</button>
     <button id="temporary_button" style="position: absolute; top: 50px; left: 0; font-style: italic; background-color: rgb(158, 147, 87);" onclick="tempAccess()">PLACEHOLDER: ACCESS TO UPGRADES!!!</button>
     <div id="temporary_div" style="visibility: hidden; height: 100%; width: 60%; position: absolute; left: 0; right: 0; top: 0; background-color: dimgray; z-index: 99;">
-        <button onclick="close_tempAccess()">zamknij</button>
-        <button id="temp_getPianoGuy" onclick="temp_getPianoGuy()" class="purchase-buttons">Get Fortepiano Guy</button>
-        <button id="temp_getConcernedCitizens" onclick="temp_getConcernedCitizens()" class="purchase-buttons" class="purchase-buttons">Get Concerned Citizens</button>
+        <button onclick="close_tempAccess()">close</button>
+        <button onclick="temp_getPianoGuy()" class="purchase-buttons">Get Fortepiano Guy</button>
+        <button onclick="temp_getConcernedCitizens()" class="purchase-buttons">Get Concerned Citizens</button>
+        <button onclick="temp_getCowboy()" class="purchase-buttons">Get Cowboy</button>
+        <button onclick="temp_getPhoto()" class="purchase-buttons">Get Old Photo</button>
+        <button onclick="temp_getMGE()" class="purchase-buttons">Get MGE Buddy</button>
     </div>
     <div id="shop">
     <button onclick="closeShop()" style="height: 30px; width: 30px; font-size: 22px; background-color: rgb(158, 147, 87); height: 30px;">X</button>
     <h1 style="text-align: center; font-size: 50px;">----  shop  ----</h1>
+    <img src="Materials/cowboy.png" alt="cowboy" style="width: 18%; position: absolute;"><h2 style="position: absolute; left: 19%;">Cowboy</h2>
+    <p style="position: absolute; left: 19%; margin-top: 5%;">Proud cowboy on his horse that stopped by Harlem on his parts unknown...<br>Active effect: 1.1$/click</p>
+    <button id="buyCowboy" onclick="getCowboy()" style="background-color: green; width: 20%; margin-top: 14.5%; margin-left: 18%; cursor: copy; height: 5%; font-size: 111%;">Buy! (200$)</button>
     </div>
-    <img src="Materials/pianista.png" id="piano_guy">
-    <img src="Materials/concerned.png" id="the_concerned">
+    <img src="Materials/pianista.png" id="piano_guy" class="products">
+    <img src="Materials/concerned.png" id="the_concerned" class="products">
+    <img src="Materials/cowboy.png" id="cowboy" class="products">
+    <img src="Materials/old-photo.jpg" id="old-photo" class="products">
+    <img src="Materials/mge.png" id="mge" class="products">
 </body>
 <script src="Sources/axel.js"></script> <!-- Skrypt jest na końcu bo JS ma srakę, że niby nie wszystko się załadowywuje zanim odpala się funkcję clicking() -->
 </html>
