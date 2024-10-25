@@ -7,7 +7,7 @@ Next, spend the cash in the store on upgrades.
 
 <h3>Make your Harlem more colorful with various people from purchased upgrades!</h3>
 
-#edit here after release plz
+#[Get Newest Edition here!](https://github.com/CornSeller69/Axel-in-Harlem-Clicker/releases/tag/v0.9-beta)
 #[Get Debug Features here!](https://github.com/CornSeller69/Axel-in-Harlem-Clicker/issues/6)
 
 <h6>Game still in beta development. Expect bugs and other things requiring improvements.</h6>
