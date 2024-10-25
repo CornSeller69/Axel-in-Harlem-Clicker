@@ -1,0 +1,222 @@
+html {
+    background-image: url(../Materials/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    overflow: hidden; /* I absolutely fucking hate scaling in CSS */
+}
+
+#menu img {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+}
+
+#menu {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    visibility: visible;
+}
+
+#playbutton {
+    height: 90px;
+    width: 300px;
+    font-size: 70px;
+    position: absolute;
+    bottom: 100px;
+    left: 6px;
+    color: black;
+    background-color: rgb(213,198,117);
+}
+
+#githubbutton {
+    height: 90px;
+    width: 300px;
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+    background-color: rgb(213,198,117);
+}
+
+#githubbutton button {
+    height: 90px;
+    width: 300px;
+    font-size: 70px;
+    color: black;
+    background-color: rgb(213,198,117); 
+}
+
+#version {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    text-align: right;
+    color: rgb(213,198,117);
+    font-size: 22px;
+}
+
+#creator {
+    position: absolute;
+    right: 10px;
+    bottom: -15px;
+    text-align: right;
+    color: rgb(213,198,117);
+    font-size: 17px;
+}
+
+#click-area {
+    pointer-events: none;
+    cursor: grab;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin-inline: auto; /* Nie wiem jak, ale dodanie margin-inline (cokolwiek to robi) powoduje że wyśrodkowanie działa prawidłowo) */
+    width: 35vw;
+    position: absolute;
+}
+
+.counter-n-shop {
+    background-color: rgba(213,198,117,0.6);
+    height: 40px;
+    font-size: 30px;
+    color: black;
+}
+
+#volume-toggle {
+    right: 5px;
+    width: 40px;
+    position: absolute;
+}
+
+#volume-toggle img {
+    width: 29px;
+    height: 29px;
+}
+
+#cash {
+    width: 400px;
+    text-align: left;
+}
+
+#shop- {
+    width: 200px;
+}
+
+/*#shop {
+    visibility: hidden;
+    height: 95%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    width: 60%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin-inline: auto;
+    background-color: rgba(213,198,117,0.99999);
+    box-shadow: 10px 5px 5px rgb(158, 147, 87);
+    z-index: 10;
+}*/
+
+@keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+}
+  
+#shop {
+    visibility: hidden;
+    height: 95%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    width: 60%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin-inline: auto;
+    background-color: rgba(213,198,117,0.99999);
+    box-shadow: 10px 5px 5px rgb(158, 147, 87);
+    z-index: 10;
+    transform: translateY(100%);
+    transition: visibility 0s, transform 0.5s ease-in-out;
+}
+  
+  #shop.visible {
+    visibility: visible;
+    transform: translateY(0);
+    animation: slideUp 0.5s ease-in-out forwards;
+}
+
+
+.products {
+    pointer-events: none;
+}
+
+/* Usuń poniższe, w razie, gdyby zakupowe
+przyciski zaczęły się pieprzyć (jakkolwiek, jakoś, nwm) */
+.purchase-buttons {
+    color: antiquewhite;
+    background-color: green;
+}
+
+#piano_guy {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 30.1%;
+    width: 25%;
+}
+
+#the_concerned {
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30%;
+    z-index: 1;
+}
+
+#cowboy {
+    visibility: hidden;
+    position: absolute;
+    bottom: 12%;
+    width: 22%;
+    left: 67%;
+    z-index: 0.9;
+}
+
+#old_photo {
+    visibility: hidden;
+    position: absolute;
+    bottom: 33%;
+    width: 14%;
+    left: 2%;
+    transform: rotate(-5deg);
+    z-index: 0.9;
+}
+
+#mge {
+    visibility: hidden;
+    position: absolute;
+    bottom: -3%;
+    width: 18%;
+    right: 0;
+}
+
+#friends {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    right: 17%;
+    width: 26%;
+    z-index: 1;
+}
