@@ -1,7 +1,12 @@
-# Axel in Harlem: Clicker
+![#Axel in Harlem: Clicker](https://raw.githubusercontent.com/CornSeller69/Axel-in-Harlem-Clicker/refs/heads/main/Materials/menu.jpg)
 
-Click on a colorfully dressed fellow with *a comically oversized rear*, that's walking through Harlem!
-Earn cash from clicks which you can spend on upgrades and decorations to make Harlem more vibrant with life!
+<h3>Welcome to this simple clicker located on the streets of Harlem where you can meet our great protagonist - Axel!</h3>
 
+This is quite simple: Click on Axel on earn cash.
+Next, spend the cash in the store on upgrades.
 
-# :trollface:
+<h3>Make your Harlem more colorful with various people from purchased upgrades!</h3>
+
+#edit here after release plz
+
+<h6>Game still in beta development. Expect bugs and other things requiring improvements.</h6>
