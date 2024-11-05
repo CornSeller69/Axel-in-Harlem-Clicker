@@ -15,7 +15,7 @@
         <img src="Materials/menu.jpg" alt="ERROR, PLEASE RELOAD THE PAGE" style="z-index: 1; pointer-events: none;">
         <button onclick="bootGame()" style="z-index: 2; cursor: pointer;" id="playbutton"><b>PLAY</b></button>
         <a href="https://github.com/CornSeller69/Axel-in-Harlem-Clicker" target="_blank" style="z-index: 2; user-select: none;" id="githubbutton"><button style="cursor: pointer;"><b>GITHUB</b></button></a>
-        <p style="z-index: 2;" id="version">v0.9 (Beta)</p> <!-- ZMIENIAJ WERSJĘ Z KAŻDĄ AKTUALIZACJĄ!!!!!!!!!! -->
+        <p style="z-index: 2;" id="version">v1.1 (Beta)</p> <!-- ZMIENIAJ WERSJĘ Z KAŻDĄ AKTUALIZACJĄ!!!!!!!!!! -->
         <p style="z-index: 2;" id="creator">Axel in Harlem: Clicker, by CornSeller. Materials used here were made by Animan Studios.</p>
     </div>
     <section id="click-area" onclick="clicking()"></section>
@@ -23,7 +23,7 @@
     <button class="counter-n-shop" onclick="openShop()" style="cursor: pointer;" id="shop-">SHOP</button>
     <button class="counter-n-shop" onclick="toggleMusic()" style="cursor: pointer;" id="volume-toggle"><img src="Materials/speaker.png" alt="toggle music"></button>
     <div id="shop">
-        <button onclick="closeShop()" style="height: 30px; width: 30px; font-size: 22px; background-color: rgb(158, 147, 87); height: 30px;">X</button>
+        <button onclick="closeShop()" id="close-shop" style="height: 30px; width: 30px; font-size: 22px; background-color: rgb(158, 147, 87); height: 30px;">X</button>
         <h1 style="text-align: center; font-size: 50px;">----  shop  ----</h1>
         <!-- cowboy -->
         <img src="Materials/cowboy.png" alt="cowboy" style="width: 18%; position: absolute;"><h2 style="position: absolute; left: 19%;">Cowboy</h2>
@@ -31,8 +31,9 @@
         <button id="buyCowboy" class="purchase-buttons" onclick="getCowboy()" style="background-color: green; width: 20%; margin-top: 14.5%; margin-left: 18%; cursor: copy; height: 5%; font-size: 111%;">Buy! (200$)</button>
         <!-- piano guy -->
         <img src="Materials/pianista.png" alt="piano gentleman" style="width: 18%; position: absolute; margin-top: 21%; left: 0;"><h2 style="position: absolute; left: 19%;">Piano Gentleman</h2>
-        <p style="position: absolute; left: 19%; margin-top: 5%;">This gentle person will play on his piano to introduce good music taste to your Harlem!<br>Active effect: +0.2 money multiplier</p>
+        <p style="position: absolute; left: 19%; margin-top: 4.5%;">This gentle person will play on his piano to introduce good music taste to your Harlem!<br>Active effect: +0.2 money multiplier<br>Upgrade effect: Changes background music to piano cover!</p> <!-- daj jakiś zmieniacz muzyki później -->
         <button id="buyPianoGuy" class="purchase-buttons" onclick="getPianoGuy()" style="background-color: green; width: 20%; margin-top: 28%; margin-left: -20%; cursor: copy; height: 5%; font-size: 111%; position: absolute;">Buy! (500.50$)</button>
+        <button id="buyPianoCover" class="purchase-buttons" onclick="getPianoCover()" style="background-color: goldenrod; color: black; width: 20%; margin-top: 28%; margin-left: 1%; cursor: copy; height: 5%; font-size: 111%; position: absolute;">Upgrade! (3100$)</button>
         <!-- concerned citizens -->
         <img src="Materials/concerned.png" alt="concerned citizens" style="width: 18%; position: absolute; margin-top: 34%; left: 0;"><h2 style="position: absolute; left: 19%; margin-top: 15%;">Concerned Citizens</h2>
         <p style="position: absolute; left: 19%; margin-top: 18%;">People of Harlem that are quite shocked at what they observe! They would never assume such legend as Axel would actually be encountered by them.<br>Active effect: +0.5$ per click</p>
@@ -58,5 +59,5 @@
     <img src="Materials/Animan.webp" id="friends" class="products">
 </body>
 <script src="Sources/main.js"></script> <!-- Skrypt jest na końcu bo JS ma srakę, że niby nie wszystko się załadowywuje zanim odpala się funkcję clicking() -->
-<script src="Sources/debug_features.js" onload="addContent()"></script>
+<script src="Extensions/debug_features.js" onload="addContent()"></script>
 </html>
