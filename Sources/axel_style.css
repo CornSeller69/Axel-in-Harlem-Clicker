@@ -70,9 +70,10 @@ html {
 #click-area {
     pointer-events: none;
     cursor: grab;
-    height: 100%;
+    height: 90%;
     left: 0;
     right: 0;
+    margin-top: 5%;
     margin-inline: auto; /* Nie wiem jak, ale dodanie margin-inline (cokolwiek to robi) powoduje że wyśrodkowanie działa prawidłowo) */
     width: 35vw;
     position: absolute;
@@ -131,7 +132,7 @@ html {
     }
 }
   
-#shop {
+/*#shop {
     visibility: hidden;
     height: 95%;
     overflow-y: scroll;
@@ -140,7 +141,7 @@ html {
     width: 60%;
     left: 0;
     right: 0;
-    top: 0;
+    top: 5px;
     bottom: 0;
     margin-inline: auto;
     background-color: rgba(213,198,117,0.99999);
@@ -161,12 +162,98 @@ html {
     pointer-events: none;
 }
 
-/* Usuń poniższe, w razie, gdyby zakupowe
-przyciski zaczęły się pieprzyć (jakkolwiek, jakoś, nwm) */
 .purchase-buttons {
     color: antiquewhite;
     background-color: green;
+}*/
+
+#shop {
+    visibility: hidden;
+    height: 95%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    width: 60%;
+    left: 0;
+    right: 0;
+    top: 5px;
+    bottom: 0;
+    margin-inline: auto;
+    background-color: rgba(213,198,117,0.99999);
+    box-shadow: 10px 5px 5px rgb(158, 147, 87);
+    z-index: 10;
+    transform: translateY(100%);
+    transition: visibility 0s, transform 0.5s ease-in-out;
 }
+
+#shop.visible {
+    visibility: visible;
+    transform: translateY(0);
+    animation: slideUp 0.5s ease-in-out forwards;
+}
+
+.purchase-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+.purchase-item img {
+    width: 18%;
+}
+
+.purchase-item .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.purchase-item h2 {
+    margin: 0;
+}
+
+.purchase-item p {
+    margin: 0;
+}
+
+.purchase-buttons {
+    color: antiquewhite;
+    background-color: green;
+    width: fit-content;
+    cursor: copy;
+    height: 30px;
+    font-size: 111%;
+}
+
+/* Media Queries for Responsiveness <-- ???????*/
+@media (max-width: 768px) {
+    #shop {
+        width: 90%;
+    }
+
+    .purchase-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .purchase-item img {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+
+    .purchase-item .info {
+        align-items: center;
+    }
+
+    .purchase-buttons {
+        width: 80%;
+    }
+}
+
+/* ------------------------------- */
 
 #piano_guy {
     visibility: hidden;
