@@ -1,16 +1,3 @@
-var mus_01 = new Audio('Materials/mus_01.mp3'); // Disclaimer: Plik JS znajduje się w folderze Sources/, jednakże nie cofamy się przy użyciu '../', jako, iż skrypt *w teorii* odpalany jest z lokalizacji pliku HTML (przynajmniej tak na to wygląda podczas prób odtworzenia audio)
-mus_01.volume = '0.4';
-mus_01.currentTime = 0;
-var mus_store = new Audio('Materials/mus_store.wav');
-mus_store.volume = '0.2';
-mus_store.currentTime = 0;
-let points = 0;
-let pts = document.getElementById("cash");
-let musicT = 0;
-var mus_purchase = new Audio('Materials/mus_purchase.mp3');
-var mus_02 = new Audio('Materials/haunted_piano.mp3');
-mus_02.volume = '0.9';
-mus_02.currentTime = 0;
 function purchaseDelay() {
     let buttons = document.getElementsByClassName("purchase-buttons") // Pamiętaj aby przypinać odpowiednie przyciski pod klasę obok wymienioną!!
     for (let i = 0; i < buttons.length; i++) {
@@ -27,48 +14,12 @@ function purchaseDelay() {
         }
       }, 2330);
 }
-let recentlyPurchased;
-let but = "You already own this!";
-let brokeh = "You're too poor for that, lmao.";
-let base = "Aight, You must own the base purchase to buy this, buddy...";
-// Poniżej wstawiaj sprawdzania jakie decory z aktywnymi efektami są zakupione...
-let cowboyOwned = false;
-let pianoGuyOwned = false;
-let concernedOwned = false;
-let friendsOwned = false;
-let oldPhotoOwned = false;
-let mgeOwned = false;
-let isMusic = true;
-let earningsPerClick = 1;
-let multiplier = 1;
-let isPiano = false;
-let pianoCoverOwned = false;
 
 function bootGame() {
     document.getElementById("menu").style.visibility = 'hidden';
     document.getElementById("click-area").style.pointerEvents = 'auto';
     mus_01.play();
-    setInterval(loopMusic, 135000);
     console.log("If you don't hear anything right now [music], that means script broke...lmao.");
-}
-
-function loopMusic() {
-    if (isMusic) {
-        switch (musicT) {
-            case 0:
-                mus_01.currentTime = 0;
-                mus_01.play();
-                break;
-            case 1:
-                mus_store.currentTime = 0;
-                mus_store.play();
-                break;
-            case 2:
-                mus_02.currentTime = 0;
-                mus_02.play();
-                break;
-        }
-    }
 }
 
 function clicking() {
@@ -78,15 +29,15 @@ function clicking() {
 
 function openShop() {
     if (isMusic) {
-        if (!isPiano) {
+        if (musicT == 0) {
             mus_01.pause();
             mus_store.currentTime = mus_01.currentTime;
-        } else {
+            mus_store.play();
+        } else if (musicT == 2) {
             mus_02.pause();
             mus_store.currentTime = mus_02.currentTime;
+            mus_store.play();
         }
-        mus_store.play();
-        musicT = 1;
     }
     //document.getElementById("shop").style.visibility = 'visible';
     document.getElementById("shop").classList.add("visible");
@@ -225,13 +176,11 @@ function getPianoCover() {
 
 function toggleMusic() {
     if (!isMusic) {
-        console.log("You absolutely should see this console message, if you don't then script is broken asf again");
         if (musicT == 0 || musicT == 2) {
             if (!isPiano) {
                 mus_01.play();
             } else {mus_02.play();}
         } else if (musicT == 1) {mus_store.play();}
-        loopMusic();
         isMusic = true;
     } else if(isMusic) {
         mus_01.pause();
