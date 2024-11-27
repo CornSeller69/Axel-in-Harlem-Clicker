@@ -9,6 +9,6 @@ Next, spend the cash in the store on upgrades.
 
 >[!IMPORTANT]
 >[Get Newest Edition here!](https://github.com/CornSeller69/Axel-in-Harlem-Clicker/releases/tag/v1.4-beta)<br>
->[Get Debug Features here!](https://github.com/CornSeller69/Axel-in-Harlem-Clicker/issues/6)
+>[Check the Wiki here!](https://github.com/CornSeller69/Axel-in-Harlem-Clicker/wiki)
 
 <h6>Game still in beta development. Expect bugs and other things requiring improvements.</h6>
