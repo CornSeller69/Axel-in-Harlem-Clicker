@@ -21,6 +21,21 @@ html {
     visibility: visible;
 }
 
+#langs {
+    background-color: rgb(213,198,117);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 5%;
+    width: 5%;
+    font-size: 20px;
+    z-index: 2;
+}
+
+#langs:hover {
+    background-color: rgb(180, 168, 100);
+}
+
 #playbutton {
     height: 90px;
     width: 300px;
@@ -30,6 +45,11 @@ html {
     left: 6px;
     color: black;
     background-color: rgb(213,198,117);
+    border-radius: 3% 3% 3% / 6% 6% 6%;  /* okrągły przycisk, jakie wymiary do czego sprawdzaj tutaj: https://css-irl.info/logical-border-radius/ */
+}
+
+#playbutton:hover {
+    background-color: rgb(180, 168, 100);
 }
 
 #githubbutton {
@@ -38,7 +58,7 @@ html {
     position: absolute;
     bottom: 6px;
     left: 6px;
-    background-color: rgb(213,198,117);
+    /*background-color: rgb(213,198,117);*/
 }
 
 #githubbutton button {
@@ -46,7 +66,12 @@ html {
     width: 300px;
     font-size: 70px;
     color: black;
-    background-color: rgb(213,198,117); 
+    background-color: rgb(213,198,117);
+    border-radius: 3% 3% 3% / 6% 6% 6%;
+}
+
+#githubbutton button:hover {
+    background-color: rgb(180, 168, 100);
 }
 
 #version {
@@ -87,9 +112,15 @@ html {
 }
 
 #volume-toggle {
-    right: 5px;
+    right: 10px;
     width: 40px;
     position: absolute;
+    align-content: center;
+    border-radius: 10% 10% 10% / 10% 10% 10%;
+}
+
+#volume-toggle:hover {
+    background-color: rgba(175, 163, 97, 0.6);
 }
 
 #volume-toggle img {
@@ -97,40 +128,47 @@ html {
     height: 29px;
 }
 
+#switch-music {
+    right: 55px;
+    width: 40px;
+    position: absolute;
+    align-content: center;
+    border-radius: 10% 10% 10% / 10% 10% 10%;
+    visibility: hidden;
+}
+
+#switch-music:hover {
+    background-color: rgba(175, 163, 97, 0.6);
+}
+
+#switch-music img {
+    width: 29px;
+    height: 29px;
+}
+
 #cash {
     width: 400px;
     text-align: left;
+    border-radius: 2.5% 2.5% 2.5% 2.5% / 20% 20% 20% 20%; /* chuj wie czy 3 czy 4 wartości, dam 4 bo działa */
 }
 
 #shop- {
     width: 200px;
+    border-radius: 5% 5% 5% 5% / 20% 20% 20% 20%;
 }
 
-/*#shop {
-    visibility: hidden;
-    height: 95%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    position: absolute;
-    width: 60%;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin-inline: auto;
-    background-color: rgba(213,198,117,0.99999);
-    box-shadow: 10px 5px 5px rgb(158, 147, 87);
-    z-index: 10;
-}*/
+#shop-:hover {
+    background-color: rgba(175, 163, 97, 0.6);
+}
 
-@keyframes slideUp {
+/*@keyframes slideUp {
     from {
       transform: translateY(100%);
     }
     to {
       transform: translateY(0);
     }
-}
+}*/
   
 /*#shop {
     visibility: hidden;
@@ -149,22 +187,6 @@ html {
     z-index: 10;
     transform: translateY(100%);
     transition: visibility 0s, transform 0.5s ease-in-out;
-}
-  
-  #shop.visible {
-    visibility: visible;
-    transform: translateY(0);
-    animation: slideUp 0.5s ease-in-out forwards;
-}
-
-
-.products {
-    pointer-events: none;
-}
-
-.purchase-buttons {
-    color: antiquewhite;
-    background-color: green;
 }*/
 
 #shop {
@@ -179,11 +201,10 @@ html {
     top: 5px;
     bottom: 0;
     margin-inline: auto;
-    background-color: rgba(213,198,117,0.99999);
+    background-color: rgba(213,198,117,0.85);
     box-shadow: 10px 5px 5px rgb(158, 147, 87);
     z-index: 10;
-    transform: translateY(100%);
-    transition: visibility 0s, transform 0.5s ease-in-out;
+    transition: margin-top 0.4s ease-out, margin-bottom 0.4s ease-in;
 }
 
 #shop.visible {

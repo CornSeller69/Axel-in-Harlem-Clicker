@@ -13,42 +13,49 @@
 <body>
     <div id="menu">
         <img src="Materials/menu.jpg" alt="ERROR, PLEASE RELOAD THE PAGE" style="z-index: 1; pointer-events: none;">
-        <button onclick="bootGame()" style="z-index: 2; cursor: pointer;" id="playbutton"><b>PLAY</b></button>
-        <a href="https://github.com/CornSeller69/Axel-in-Harlem-Clicker" target="_blank" style="z-index: 2; user-select: none;" id="githubbutton"><button style="cursor: pointer;"><b>GITHUB</b></button></a>
-        <p style="z-index: 2;" id="version">v1.1 (Beta)</p> <!-- ZMIENIAJ WERSJĘ Z KAŻDĄ AKTUALIZACJĄ!!!!!!!!!! -->
+        <button onclick="bootGame(); buttonClick();" style="z-index: 2; cursor: pointer;" id="playbutton"><b id="t1">PLAY</b></button>
+        <a href="https://github.com/CornSeller69/Axel-in-Harlem-Clicker" target="_blank" style="z-index: 2; user-select: none;" id="githubbutton" onclick="buttonClick()"><button style="cursor: pointer;"><b>GITHUB</b></button></a>
+        <select id="langs" onclick="buttonClick()">
+            <option onclick="buttonClick(); setTimeout(function() {window.location.replace('axel clicker.html');},50); // tak, to dosłownie poprostu reloaduje stronę, bo defaultowy język i tak jest angielskim a poza menu tego nie zmienisz" selected>English</option>
+            <option onclick="change2pirate()">Pirate</option>
+            <option onclick="change2pl()">Polski</option>
+            <option onclick="ownTrans(); check4ot();" id="owntt">Own (Extension)</option>
+          </select>
+        <p style="z-index: 2;" id="version">v1.4 (Beta)</p> <!-- ZMIENIAJ WERSJĘ Z KAŻDĄ AKTUALIZACJĄ!!!!!!!!!! -->
         <p style="z-index: 2;" id="creator">Axel in Harlem: Clicker, by CornSeller. Materials used here were made by Animan Studios.</p>
     </div>
     <section id="click-area" onclick="clicking()"></section>
     <button id="cash" disabled class="counter-n-shop">Cash: 0.00$</button>
-    <button class="counter-n-shop" onclick="openShop()" style="cursor: pointer;" id="shop-">SHOP</button>
-    <button class="counter-n-shop" onclick="toggleMusic()" style="cursor: pointer;" id="volume-toggle"><img src="Materials/speaker.png" alt="toggle music"></button>
+    <button class="counter-n-shop" onclick="openShop(); buttonClick();" style="cursor: pointer;" id="shop-">SHOP</button>
+    <button class="counter-n-shop" onclick="switchMusic(); buttonClick();" style="cursor: pointer;" id="switch-music"><img src="Materials/switch.png" alt="change music type"></button>
+    <button class="counter-n-shop" onclick="toggleMusic(); buttonClick();" style="cursor: pointer;" id="volume-toggle"><img src="Materials/speaker.png" alt="toggle music"></button>
     <div id="shop">
-        <button onclick="closeShop()" id="close-shop" style="height: 30px; width: 30px; font-size: 22px; background-color: rgb(158, 147, 87); height: 30px;">X</button>
-        <h1 style="text-align: center; font-size: 50px;">----  shop  ----</h1>
+        <button onclick="closeShop(); buttonClick();" id="close-shop" style="height: 30px; width: 30px; font-size: 22px; background-color: rgb(158, 147, 87); height: 30px; cursor: pointer;">X</button>
+        <h1 style="text-align: center; font-size: 50px;" id="t2">----  shop  ----</h1>
         <!-- cowboy -->
-        <img src="Materials/cowboy.png" alt="cowboy" style="width: 18%; position: absolute;"><h2 style="position: absolute; left: 19%;">Cowboy</h2>
-        <p style="position: absolute; left: 19%; margin-top: 5%;">Proud cowboy on his horse that stopped by Harlem on his parts unknown...<br>Active effect: +0.1$ per click</p>
+        <img src="Materials/cowboy.png" alt="cowboy" style="width: 18%; position: absolute;"><h2 style="position: absolute; left: 19%;" id="t3">Cowboy</h2>
+        <p style="position: absolute; left: 19%; margin-top: 5%;" id="t4">Proud cowboy on his horse that stopped by Harlem on his parts unknown...<br>Active effect: +0.1$ per click</p>
         <button id="buyCowboy" class="purchase-buttons" onclick="getCowboy()" style="background-color: green; width: 20%; margin-top: 14.5%; margin-left: 18%; cursor: copy; height: 5%; font-size: 111%;">Buy! (200$)</button>
         <!-- piano guy -->
-        <img src="Materials/pianista.png" alt="piano gentleman" style="width: 18%; position: absolute; margin-top: 21%; left: 0;"><h2 style="position: absolute; left: 19%;">Piano Gentleman</h2>
-        <p style="position: absolute; left: 19%; margin-top: 4.5%;">This gentle person will play on his piano to introduce good music taste to your Harlem!<br>Active effect: +0.2 money multiplier<br>Upgrade effect: Changes background music to piano cover!</p> <!-- daj jakiś zmieniacz muzyki później -->
+        <img src="Materials/pianista.png" alt="piano gentleman" style="width: 18%; position: absolute; margin-top: 21%; left: 0;"><h2 style="position: absolute; left: 19%;" id="t5">Piano Gentleman</h2>
+        <p style="position: absolute; left: 19%; margin-top: 4.5%;" id="t6">This gentle person will play on his piano to introduce good music taste to your Harlem!<br>Active effect: +0.2 money multiplier<br>Upgrade effect: Changes background music to piano cover!</p> <!-- daj jakiś zmieniacz muzyki później -->
         <button id="buyPianoGuy" class="purchase-buttons" onclick="getPianoGuy()" style="background-color: green; width: 20%; margin-top: 28%; margin-left: -20%; cursor: copy; height: 5%; font-size: 111%; position: absolute;">Buy! (500.50$)</button>
         <button id="buyPianoCover" class="purchase-buttons" onclick="getPianoCover()" style="background-color: goldenrod; color: black; width: 20%; margin-top: 28%; margin-left: 1%; cursor: copy; height: 5%; font-size: 111%; position: absolute;">Upgrade! (3100$)</button>
         <!-- concerned citizens -->
-        <img src="Materials/concerned.png" alt="concerned citizens" style="width: 18%; position: absolute; margin-top: 34%; left: 0;"><h2 style="position: absolute; left: 19%; margin-top: 15%;">Concerned Citizens</h2>
-        <p style="position: absolute; left: 19%; margin-top: 18%;">People of Harlem that are quite shocked at what they observe! They would never assume such legend as Axel would actually be encountered by them.<br>Active effect: +0.5$ per click</p>
+        <img src="Materials/concerned.png" alt="concerned citizens" style="width: 18%; position: absolute; margin-top: 34%; left: 0;"><h2 style="position: absolute; left: 19%; margin-top: 15%;" id="t7b">Concerned Citizens</h2>
+        <p style="position: absolute; left: 19%; margin-top: 18%;" id="t7">People of Harlem that are quite shocked at what they observe! They would never assume such legend as Axel would actually be encountered by them.<br>Active effect: +0.5$ per click</p>
         <button id="buyConcerned" class="purchase-buttons" onclick="getConcerned()" style="background-color: green; width: 20%; margin-top: 42%; margin-left: -20%; cursor: copy; height: 5%; font-size: 111%; position: absolute;">Buy! (705.90$)</button>
         <!-- friends -->
-        <img src="Materials/Animan.webp" alt="friends" style="width: 18%; position: absolute; margin-top: 48%; left: 0;"><h2 style="position: absolute; left: 19%; margin-top: 30%;">Axel's Friends</h2>
-        <p style="position: absolute; left: 19%; margin-top: 33%;">Axel's best friends! Infact, they go everywhere he goes! What a truly nice lads, aren't they?<br>Active effect: +0.3 money multiplier</p>
+        <img src="Materials/Animan.webp" alt="friends" style="width: 18%; position: absolute; margin-top: 48%; left: 0;"><h2 style="position: absolute; left: 19%; margin-top: 30%;" id="t8">Axel's Friends</h2>
+        <p style="position: absolute; left: 19%; margin-top: 33%;" id="t9">Axel's best friends! Infact, they go everywhere he goes! What a truly nice lads, aren't they?<br>Active effect: +0.3 money multiplier</p>
         <button id="buyFriends" class="purchase-buttons" onclick="getFriends()" style="background-color: green; width: 20%; margin-top: 55%; margin-left: -20%; cursor: copy; height: 5%; font-size: 111%; position: absolute;">Buy! (1111.11$)</button>
         <!-- old photo -->
-        <img src="Materials/old-photo.jpg" alt="photo" style="width: 18%; position: absolute; margin-top: 61%; left: 0;"><h2 style="position: absolute; left: 19%; margin-top: 42.5%;">Old Photo</h2>
-        <p style="position: absolute; left: 19%; margin-top: 50%;">Axel's family memorabilia. It shows his grandfather walking down the same streets of Harlem that he does now!<br>Active effect: +1$ per click</p>
+        <img src="Materials/old-photo.jpg" alt="photo" style="width: 18%; position: absolute; margin-top: 61%; left: 0;"><h2 style="position: absolute; left: 19%; margin-top: 42.5%;" id="t10">Old Photo</h2>
+        <p style="position: absolute; left: 19%; margin-top: 50%;" id="t11">Axel's family memorabilia. It shows his grandfather walking down the same streets of Harlem that he does now!<br>Active effect: +1$ per click</p>
         <button id="buyPhoto" class="purchase-buttons" onclick="getPhoto()" style="background-color: green; width: 20%; margin-top: 85%; margin-left: -20%; cursor: copy; height: 5%; font-size: 111%; position: absolute;">Buy! (5050.55$)</button>
         <!-- mge bro -->
-        <img src="Materials/mge.png" alt="mge buddy" style="width: 18%; position: absolute; margin-top: 92%; left: 0;"><h2 style="position: absolute; left: 19%; margin-top: 72%;">MGE Buddy</h2>
-        <p style="position: absolute; left: 19%; margin-top: 76%;">This guy is not even from this universe, but he's so cool (and agrees Axel also is very cool) that he decided to just... appear here!!<br>Active effect: +0.7 money multiplier</p>
+        <img src="Materials/mge.png" alt="mge buddy" style="width: 18%; position: absolute; margin-top: 92%; left: 0;"><h2 style="position: absolute; left: 19%; margin-top: 72%;" id="t12">MGE Buddy</h2>
+        <p style="position: absolute; left: 19%; margin-top: 76%;" id="t13">This guy is not even from this universe, but he's so cool (and agrees Axel also is very cool) that he decided to just... appear here!!<br>Active effect: +0.7 money multiplier</p>
         <button id="buyMGE" class="purchase-buttons" onclick="getMGE()" style="background-color: green; width: 20%; margin-top: 106%; margin-left: -20%; cursor: copy; height: 5%; font-size: 111%; position: absolute;">Buy! (13010.99$)</button>
     </div>
     <img src="Materials/pianista.png" id="piano_guy" class="products">
@@ -60,5 +67,7 @@
 </body>
 <script src="Sources/main.js"></script> <!-- Skrypt jest na końcu bo JS ma srakę, że niby nie wszystko się załadowywuje zanim odpala się funkcję clicking() -->
 <script src="Sources/values.js"></script>
+<script src="Sources/translations.js"></script>
 <script src="Extensions/debug_features.js" onload="addContent()"></script>
+<script src="Extensions/own_translation.js"></script>
 </html>

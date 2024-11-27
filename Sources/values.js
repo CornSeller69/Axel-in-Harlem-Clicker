@@ -7,10 +7,13 @@ let base = "Aight, You must own the base purchase to buy this, buddy...";
 let earningsPerClick = 1;
 let multiplier = 1;
 
+let lang = 'en'; // język gry, defaultowo jest en (angielski)
+
 // Muzyka:
     let musicT = 0; // sprawdza warian muzyki
     let isMusic = true; // upewnia się że muzyka ma grać
     let isPiano = false; // sprawdza czy ma grać wersja pianinowa
+    let chosenT = 'normal'; // sprawdza jaki track został wybrany (domyślny/pianino)
     // mus_01
     const mus_01 = new Audio('Materials/mus_01.mp3'); // Disclaimer: Plik JS znajduje się w folderze Sources/, jednakże nie cofamy się przy użyciu '../', jako, iż skrypt *w teorii* odpalany jest z lokalizacji pliku HTML (przynajmniej tak na to wygląda podczas prób odtworzenia audio)
     mus_01.volume = '0.4';
@@ -28,6 +31,9 @@ let multiplier = 1;
     mus_store.loop = true;
     //mus_purchase
     const mus_purchase = new Audio('Materials/mus_purchase.mp3');
+    const mus_nope = new Audio('Materials/nope_4.mp3');
+    const mus_srcb = new Audio('Materials/button.wav');
+
 // Zakupione:
     let cowboyOwned = false;
     let pianoGuyOwned = false;
