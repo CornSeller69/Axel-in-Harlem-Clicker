@@ -39,7 +39,7 @@ function change2pirate() {
     but = "Ye already own this!";
     brokeh = "Ye be too poor for that, har har!";
     base = "Aye, ye must own the base purchase to buy this, matey...";
-    short("t1").innerHTML = "PLAY";
+    short("t1").innerHTML = "SAIL";
     short("creator").innerHTML = "Axel in Harlem: Clicker, by CornSeller. Materials used here be made by Animan Studios.";
     short("cash").innerHTML = "Dubloons: 0.00$";
     short("shop-").innerHTML = "SHOP";

@@ -9,7 +9,7 @@ function purchaseDelay() {
     } else if (isOwnLang) {
         alert(recentlyPurchased + " " + ownt27);
     } else if (isPirate) {
-        alert(recentlyPurchased + "has been purchased!");
+        alert(recentlyPurchased + " has been purchased!");
     } else {
         alert(recentlyPurchased + " has been purchased!");
     }
